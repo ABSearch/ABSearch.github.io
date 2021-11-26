@@ -1,84 +1,102 @@
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-	crossorigin="anonymous"
-/>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<div align="center" style="padding-top: 50">
-	<img
-		src="https://i.imgur.com/Rso17XC.jpg"
-		style="height: 150px; margin: 40px; border-radius: 10px"
-	/>
-	<form action="" method="get" id="form" target="_blank">
-		<input
-			type="text"
-			value=""
-			id="box"
-			name="search_query"
-			placeholder="Search Here"
-			autofocus
-			target="_blank"
+		<!-- Bootstrap CSS -->
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+			crossorigin="anonymous"
 		/>
 
-		<div align="center" style="padding-top: 10">
-			<input
-				type="submit"
-				value="ABBay"
-				formaction="http://audiobookbay.nl"
-				onclick="document.getElementById('box').name='s'"
-				class="btn btn-primary btn-sm"
+		<title>Hello, world!</title>
+	</head>
+	<body>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+			crossorigin="anonymous"
+		></script>
+		<div align="center" style="padding-top: 50">
+			<img
+				src="https://i.imgur.com/Rso17XC.jpg"
+				style="height: 150px; margin: 40px; border-radius: 10px"
 			/>
-
-			<input
-				type="submit"
-				value="Overdrive"
-				formaction="https://www.overdrive.com/search"
-				onclick="document.getElementById('box').name='q'"
-				class="btn btn-primary btn-sm"
-			/>
-			<form>
+			<form action="" method="get" id="form" target="_blank">
 				<input
-					type="submit"
-					value="Mobilisim"
-					formaction="https://forum.mobilism.me/search.php"
-					onclick="document.getElementById('box').name='keywords'"
-					class="btn btn-primary btn-sm"
+					type="text"
+					value=""
+					id="box"
+					name="search_query"
+					placeholder="Search Here"
+					autofocus
+					target="_blank"
 				/>
-				<input type="hidden" name="terms" value="all" />
-				<input type="hidden" name="sc" value="1" />
-				<input type="hidden" name="sf" value="titleonly" />
-				<input type="hidden" name="sk" value="t" />
-				<input type="hidden" name="sd" value="d" />
-				<input type="hidden" name="st" value="topics" />
-				<input type="hidden" name="h" value="300" />
-				<input type="hidden" name="t" value="0" />
-				<input type="hidden" name="t" value="0" />
+
+				<div align="center" style="padding-top: 10">
+					<input
+						type="submit"
+						value="ABBay"
+						formaction="http://audiobookbay.nl"
+						onclick="document.getElementById('box').name='s'"
+						class="btn btn-primary btn-sm"
+					/>
+
+					<input
+						type="submit"
+						value="Overdrive"
+						formaction="https://www.overdrive.com/search"
+						onclick="document.getElementById('box').name='q'"
+						class="btn btn-primary btn-sm"
+					/>
+					<form>
+						<input
+							type="submit"
+							value="Mobilisim"
+							formaction="https://forum.mobilism.me/search.php"
+							onclick="document.getElementById('box').name='keywords'"
+							class="btn btn-primary btn-sm"
+						/>
+						<input type="hidden" name="terms" value="all" />
+						<input type="hidden" name="sc" value="1" />
+						<input type="hidden" name="sf" value="titleonly" />
+						<input type="hidden" name="sk" value="t" />
+						<input type="hidden" name="sd" value="d" />
+						<input type="hidden" name="st" value="topics" />
+						<input type="hidden" name="h" value="300" />
+						<input type="hidden" name="t" value="0" />
+						<input type="hidden" name="t" value="0" />
+					</form>
+					<input
+						type="submit"
+						value="3x.ro"
+						formaction="https://www.bing.com/search"
+						onclick="document.getElementById('box').name='q';box.value='site:audiobooks.3xforum.ro '+box.value;"
+						class="btn btn-primary btn-sm"
+					/>
+
+					<input
+						type="submit"
+						value="TPB"
+						formaction="https://thepiratebay.org/search.php"
+						onclick="document.getElementById('box').name='q'"
+						class="btn btn-primary btn-sm"
+					/>
+					<input type="hidden" name="cat" value="102" />
+
+					<input
+						type="submit"
+						value="Ebooke"
+						formaction="https://ebookee.com/search.php"
+						onclick="document.getElementById('box').name='q';box.value='audiobook '+box.value;"
+						class="btn btn-primary btn-sm"
+					/>
+				</div>
 			</form>
-			<input
-				type="submit"
-				value="3x.ro"
-				formaction="https://www.bing.com/search"
-				onclick="document.getElementById('box').name='q';box.value='site:audiobooks.3xforum.ro '+box.value;"
-				class="btn btn-primary btn-sm"
-			/>
-
-			<input
-				type="submit"
-				value="TPB"
-				formaction="https://thepiratebay.org/search.php"
-				onclick="document.getElementById('box').name='q'"
-				class="btn btn-primary btn-sm"
-			/>
-			<input type="hidden" name="cat" value="102" />
-
-			<input
-				type="submit"
-				value="Ebooke"
-				formaction="https://ebookee.com/search.php"
-				onclick="document.getElementById('box').name='q';box.value='audiobook '+box.value;"
-				class="btn btn-primary btn-sm"
-			/>
 		</div>
-	</form>
-</div>
+	</body>
+</html>
