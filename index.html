@@ -56,10 +56,28 @@
 			.btn:hover {
 				box-shadow: 0 0 0 0.1rem rgba(105, 105, 105, 0.5) !important;
 			}
-			.wrapper {
+			.thebuttons {
 				display: grid;
-				height: 50vh;
-				grid-template-columns: 0.5fr 1fr 1fr 0.5fr;
+				grid-template-columns: 0.3fr 1fr 1fr 0.3fr;
+			}
+			html,
+			body {
+				height: 100%;
+				margin: 0;
+			}
+			#wrapper {
+				height: 100%;
+				padding-bottom: 160px;
+			}
+			body > #wrapper {
+				height: auto;
+				min-height: 100%;
+			}
+			.footer {
+				height: 60px;
+				margin-top: -60px;
+				position: relative;
+				color: #fff;
 			}
 		</style>
 
@@ -138,96 +156,201 @@
 		</script>
 	</head>
 
-	<body class="bg-dark text-white" style="height: 100vh">
-		<div align="center" style="padding-top: 50" id="content">
-			<img
-				src="https://i.imgur.com/Rso17XC.jpg"
-				style="height: 150px; margin: 30px; border-radius: 10px"
-			/>
+	<body class="bg-dark text-white">
+		<div id="wrapper">
+			<div align="center" style="padding-top: 50" id="content">
+				<img
+					src="https://i.imgur.com/Rso17XC.jpg"
+					style="height: 150px; margin: 30px; border-radius: 10px"
+				/>
 
-			<form onsubmit="event.preventDefault();" id="inputForm">
-				<input type="text" value="Clive Cussler" name="inputBox" />
-				<div class="wrapper" style="text-align: center">
-					<div><!-- LEFT - Empty On Purpose--></div>
-					<div class="buttonGroup" style="margin: 0px 10px">
-						<br />
-						<p>Audiobooks</p>
-
-						<button
-							onclick="submitForm(this, {url:'audiobookbay.nl',keys:[{n:'s',i:'inputBox'}]});"
-							class="btn btn-primary btn-sm shadow-none"
-						>
-							ABBay
-						</button>
-						<button
-							onclick="submitForm(this, {url:'archive.org/search.php',keys:[{n:'query',i:'inputBox'}, {n:'and[]',v:'mediatype:\x22collection\x22'},{n:'and[]',v:'mediatype:\x22audio\x22'}]});"
-							class="btn btn-primary btn-sm shadow-none"
-						>
-							Archive
-						</button>
-
-						<button
-							onclick="submitForm(this, {url:'ebookee.com/search.php',keys:[{n:'q',i:'inputBox', a:' audio'}, {n:'sa',v:'search'}]});"
-							class="btn btn-primary btn-sm"
-						>
-							Ebooke
-						</button>
-
-						<button
-							onclick="submitForm(this, {url:'thepiratebay.org/search.php',keys:[{n:'q',i:'inputBox'}, {n:'cat',v:'102'}]});"
-							class="btn btn-primary btn-sm"
-						>
-							TPB
-						</button>
-
-						<div>
-							<p
-								style="
-									font-size: 12px;
-									color: rgb(117, 117, 117);
-									margin-top: 10px;
-									margin-bottom: 10px;
-								"
-							>
-								*Needs an Account
-							</p>
+				<form onsubmit="event.preventDefault();" id="inputForm">
+					<input type="text" value="Clive Cussler" name="inputBox" />
+					<div class="thebuttons" style="text-align: center">
+						<div><!-- LEFT - Empty On Purpose--></div>
+						<div class="buttonGroup" style="margin: 0px 10px">
+							<br />
+							<p>Audiobooks</p>
 
 							<button
-								onclick="submitForm(this, {url:'bing.com/search',keys:[{n:'q',i:'inputBox', p:'site:audiobooks.3xforum.ro '}]});"
+								onclick="submitForm(this, {url:'audiobookbay.nl/',keys:[{n:'s',i:'inputBox'}]});"
 								class="btn btn-primary btn-sm shadow-none"
 							>
-								ab.3x.ro
+								ABBay
 							</button>
 							<button
-								onclick="submitForm(this, {url:'overdrive.com/search/',keys:[{n:'q',i:'inputBox'},{n:'f-formatClassification',v:'Audiobook'},]});"
+								onclick="submitForm(this, {url:'archive.org/search.php',keys:[{n:'query',i:'inputBox'}, {n:'and[]',v:'mediatype:\x22collection\x22'},{n:'and[]',v:'mediatype:\x22audio\x22'}]});"
 								class="btn btn-primary btn-sm shadow-none"
 							>
-								ODrive
+								Archive
+							</button>
+
+							<button
+								onclick="submitForm(this, {url:'ebookee.com/search.php',keys:[{n:'q',i:'inputBox', a:' audio'}, {n:'sa',v:'search'}]});"
+								class="btn btn-primary btn-sm"
+							>
+								Ebooke
+							</button>
+
+							<button
+								onclick="submitForm(this, {url:'thepiratebay.org/search.php',keys:[{n:'q',i:'inputBox'}, {n:'cat',v:'102'}]});"
+								class="btn btn-primary btn-sm"
+							>
+								TPB
+							</button>
+
+							<div>
+								<p
+									style="
+										font-size: 12px;
+										color: rgb(117, 117, 117);
+										margin-top: 10px;
+										margin-bottom: 10px;
+									"
+								>
+									*Needs an Account
+								</p>
+
+								<button
+									onclick="submitForm(this, {url:'bing.com/search/',keys:[{n:'q',i:'inputBox', p:'site:audiobooks.3xforum.ro '}]});"
+									class="btn btn-primary btn-sm shadow-none"
+								>
+									ab.3x.ro
+								</button>
+								<button
+									onclick="submitForm(this, {url:'overdrive.com/search/',keys:[{n:'q',i:'inputBox'},{n:'f-formatClassification',v:'Audiobook'},]});"
+									class="btn btn-primary btn-sm shadow-none"
+								>
+									ODrive
+								</button>
+								<button
+									onclick="submitForm(this, {url:'forum.mobilism.me/search.php',keys:[{n:'keywords',i:'inputBox'},{n:'terms',v:'all'},{n:'fid[]',v:'124'},{n:'sc',v:'1'},{n:'sf',v:'titleonly'},{n:'sk',v:'t'},{n:'sd',v:'d'},{n:'sr',v:'topics'},{n:'h',v:'300'},{n:'t',v:'0'}]});"
+									class="btn btn-primary btn-sm shadow-none"
+								>
+									Mob
+								</button>
+								<button
+									onclick="submitForm(this, {url:'nzbgeek.info/geekseek.php',keys:[{n:'browseincludewords',i:'inputBox'}, {n:'c',v:'3030'}]});"
+									class="btn btn-primary btn-sm shadow-none"
+								>
+									Geek
+								</button>
+								<button
+									onclick="submitForm(this, {url:'drunkenslug.com/',keys:[{a:'search/',i:'inputBox'}, {n:'t',v:'3030'}]});"
+									class="btn btn-primary btn-sm shadow-none"
+								>
+									DSlug
+								</button>
+								<button
+									onclick="submitForm(this, {url:'myanonamouse.net/tor/browse.php',keys:[{n:'tor[text]',i:'inputBox'}, {n:'tor[cat][]',v:'39'},{n:'tor[cat][]',v:'49'},{n:'tor[cat][]',v:'50'},{n:'tor[cat][]',v:'83'},{n:'tor[cat][]',v:'51'},{n:'tor[cat][]',v:'97'},{n:'tor[cat][]',v:'40'},{n:'tor[cat][]',v:'41'},{n:'tor[cat][]',v:'106'},{n:'tor[cat][]',v:'42'},{n:'tor[cat][]',v:'52'},{n:'tor[cat][]',v:'98'},{n:'tor[cat][]',v:'54'},{n:'tor[cat][]',v:'55'},{n:'tor[cat][]',v:'43'},{n:'tor[cat][]',v:'99'},{n:'tor[cat][]',v:'84'},{n:'tor[cat][]',v:'44'},{n:'tor[cat][]',v:'56'},{n:'tor[cat][]',v:'45'},{n:'tor[cat][]',v:'57'},{n:'tor[cat][]',v:'85'},{n:'tor[cat][]',v:'87'},{n:'tor[cat][]',v:'119'},{n:'tor[cat][]',v:'88'},{n:'tor[cat][]',v:'58'},{n:'tor[cat][]',v:'59'},{n:'tor[cat][]',v:'46'},{n:'tor[cat][]',v:'47'},{n:'tor[cat][]',v:'53'},{n:'tor[cat][]',v:'89'},{n:'tor[cat][]',v:'100'},{n:'tor[cat][]',v:'108'},{n:'tor[cat][]',v:'48'},{n:'tor[cat][]',v:'111'}]});"
+									class="btn btn-primary btn-sm shadow-none"
+								>
+									MaM
+								</button>
+								<button
+									onclick="submitForm(this, {url:'www.christiandl.com/search2/',keys:[{n:'search',i:'inputBox'}, {n:'searchtype',v:'1'}, {n:'brd[17]',v:'17'}, {n:'brd[20]',v:'20'}, {n:'brd[21]',v:'21'}]});"
+									class="btn btn-primary btn-sm shadow-none"
+								>
+									CDL
+								</button>
+								<p style="margin-top: 30px">
+									<button
+										onclick="submitAllButtons(this)"
+										class="btn btn-secondary btn-sm shadow-none"
+									>
+										Open ALL
+									</button>
+								</p>
+							</div>
+						</div>
+						<div class="buttonGroup" style="margin: 0px 10px">
+							<br />
+							<p>eBooks</p>
+
+							<button
+								onclick="submitForm(this, {url:'b-ok.cc/',keys:[{a:'s/',i:'inputBox'}]});"
+								class="btn btn-primary btn-sm shadow-none"
+							>
+								ZLib
 							</button>
 							<button
-								onclick="submitForm(this, {url:'forum.mobilism.me/search.php',keys:[{n:'keywords',i:'inputBox'},{n:'terms',v:'all'},{n:'fid[]',v:'124'},{n:'sc',v:'1'},{n:'sf',v:'titleonly'},{n:'sk',v:'t'},{n:'sd',v:'d'},{n:'sr',v:'topics'},{n:'h',v:'300'},{n:'t',v:'0'}]});"
+								onclick="submitForm(this, {url:'libgen.is/search.php',keys:[{n:'req',i:'inputBox'}]});"
 								class="btn btn-primary btn-sm shadow-none"
 							>
-								Mobilisim
+								LibGen
 							</button>
 							<button
-								onclick="submitForm(this, {url:'nzbgeek.info/geekseek.php',keys:[{n:'browseincludewords',i:'inputBox'}, {n:'c',v:'3030'}]});"
+								onclick="submitForm(this, {url:'ebookee.com/search.php',keys:[{n:'q',i:'inputBox'}, {n:'sa',v:'search'}]});"
 								class="btn btn-primary btn-sm shadow-none"
 							>
-								Geek
+								Ebookee
 							</button>
 							<button
-								onclick="submitForm(this, {url:'drunkenslug.com',keys:[{a:'search/',i:'inputBox'}, {n:'t',v:'3030'}]});"
+								onclick="submitForm(this, {url:'archive.org/search.php',keys:[{n:'query',i:'inputBox'}, {n:'and[]',v:'mediatype:\x22collection\x22'},{n:'and[]',v:'mediatype:\x22texts\x22'}]});"
 								class="btn btn-primary btn-sm shadow-none"
 							>
-								DSlug
+								Archive
 							</button>
+
 							<button
-								onclick="submitForm(this, {url:'myanonamouse.net/tor/browse.php',keys:[{n:'tor[text]',i:'inputBox'}, {n:'tor[cat][]',v:'39'},{n:'tor[cat][]',v:'49'},{n:'tor[cat][]',v:'50'},{n:'tor[cat][]',v:'83'},{n:'tor[cat][]',v:'51'},{n:'tor[cat][]',v:'97'},{n:'tor[cat][]',v:'40'},{n:'tor[cat][]',v:'41'},{n:'tor[cat][]',v:'106'},{n:'tor[cat][]',v:'42'},{n:'tor[cat][]',v:'52'},{n:'tor[cat][]',v:'98'},{n:'tor[cat][]',v:'54'},{n:'tor[cat][]',v:'55'},{n:'tor[cat][]',v:'43'},{n:'tor[cat][]',v:'99'},{n:'tor[cat][]',v:'84'},{n:'tor[cat][]',v:'44'},{n:'tor[cat][]',v:'56'},{n:'tor[cat][]',v:'45'},{n:'tor[cat][]',v:'57'},{n:'tor[cat][]',v:'85'},{n:'tor[cat][]',v:'87'},{n:'tor[cat][]',v:'119'},{n:'tor[cat][]',v:'88'},{n:'tor[cat][]',v:'58'},{n:'tor[cat][]',v:'59'},{n:'tor[cat][]',v:'46'},{n:'tor[cat][]',v:'47'},{n:'tor[cat][]',v:'53'},{n:'tor[cat][]',v:'89'},{n:'tor[cat][]',v:'100'},{n:'tor[cat][]',v:'108'},{n:'tor[cat][]',v:'48'},{n:'tor[cat][]',v:'111'}]});"
+								onclick="submitForm(this, {url:'odcrawler.xyz/',keys:[{a:'search/',i:'inputBox'}]});"
 								class="btn btn-primary btn-sm shadow-none"
 							>
-								MaM
+								ODC
 							</button>
+
+							<div>
+								<p
+									style="
+										font-size: 12px;
+										color: rgb(117, 117, 117);
+										margin-top: 10px;
+										margin-bottom: 10px;
+									"
+								>
+									*Needs an Account
+								</p>
+
+								<button
+									onclick="submitForm(this, {url:'forum.mobilism.me/search.php',keys:[{n:'keywords',i:'inputBox'},{n:'terms',v:'all'},{n:'fid[]',v:'106'},{n:'sc',v:'1'},{n:'sf',v:'titleonly'},{n:'sk',v:'t'},{n:'sd',v:'d'},{n:'sr',v:'topics'},{n:'h',v:'300'},{n:'t',v:'0'}]});"
+									class="btn btn-primary btn-sm shadow-none"
+								>
+									Mob
+								</button>
+
+								<button
+									onclick="submitForm(this, {url:'overdrive.com/search/',keys:[{n:'q',i:'inputBox'},{n:'f-formatClassification',v:'eBook'},]});"
+									class="btn btn-primary btn-sm shadow-none"
+								>
+									ODrive
+								</button>
+								<button
+									onclick="submitForm(this, {url:'drunkenslug.com/',keys:[{a:'search/',i:'inputBox'}, {n:'t',v:'7000'}]});"
+									class="btn btn-primary btn-sm shadow-none"
+								>
+									DSlug
+								</button>
+
+								<button
+									onclick="submitForm(this, {url:'nzbgeek.info/geekseek.php',keys:[{n:'browseincludewords',i:'inputBox'}, {n:'c',v:'7000'}]});"
+									class="btn btn-primary btn-sm shadow-none"
+								>
+									Geek
+								</button>
+								<button
+									onclick="submitForm(this, {url:'myanonamouse.net/tor/browse.php',keys:[{n:'tor[text]',i:'inputBox'}, {n:'tor[cat][]',v:'60'},{n:'tor[cat][]',v:'71'},{n:'tor[cat][]',v:'72'},{n:'tor[cat][]',v:'90'},{n:'tor[cat][]',v:'61'},{n:'tor[cat][]',v:'73'},{n:'tor[cat][]',v:'101'},{n:'tor[cat][]',v:'62'},{n:'tor[cat][]',v:'63'},{n:'tor[cat][]',v:'107'},{n:'tor[cat][]',v:'64'},{n:'tor[cat][]',v:'74'},{n:'tor[cat][]',v:'102'},{n:'tor[cat][]',v:'76'},{n:'tor[cat][]',v:'77'},{n:'tor[cat][]',v:'65'},{n:'tor[cat][]',v:'103'},{n:'tor[cat][]',v:'115'},{n:'tor[cat][]',v:'91'},{n:'tor[cat][]',v:'66'},{n:'tor[cat][]',v:'78'},{n:'tor[cat][]',v:'67'},{n:'tor[cat][]',v:'79'},{n:'tor[cat][]',v:'80'},{n:'tor[cat][]',v:'92'},{n:'tor[cat][]',v:'118'},{n:'tor[cat][]',v:'94'},{n:'tor[cat][]',v:'120'},{n:'tor[cat][]',v:'95'},{n:'tor[cat][]',v:'81'},{n:'tor[cat][]',v:'82'},{n:'tor[cat][]',v:'68'},{n:'tor[cat][]',v:'69'},{n:'tor[cat][]',v:'75'},{n:'tor[cat][]',v:'96'},{n:'tor[cat][]',v:'104'},{n:'tor[cat][]',v:'109'},{n:'tor[cat][]',v:'70'},{n:'tor[cat][]',v:'112'}]});"
+									class="btn btn-primary btn-sm shadow-none"
+								>
+									MaM
+								</button>
+								<button
+									onclick="submitForm(this, {url:'www.christiandl.com/search2/',keys:[{n:'search',i:'inputBox'}, {n:'searchtype',v:'1'}, {n:'brd[16]',v:'16'}, {n:'brd[17]',v:'17'}, {n:'brd[21]',v:'21'}]});"
+									class="btn btn-primary btn-sm shadow-none"
+								>
+									CDL
+								</button>
+							</div>
+
 							<p style="margin-top: 30px">
 								<button
 									onclick="submitAllButtons(this)"
@@ -237,104 +360,13 @@
 								</button>
 							</p>
 						</div>
+						<div><!-- RIGHT - Empty On Purpose--></div>
 					</div>
-					<div class="buttonGroup" style="margin: 0px 10px">
-						<br />
-						<p>eBooks</p>
-
-						<button
-							onclick="submitForm(this, {url:'b-ok.cc/',keys:[{a:'s/',i:'inputBox'}]});"
-							class="btn btn-primary btn-sm shadow-none"
-						>
-							ZLib
-						</button>
-						<button
-							onclick="submitForm(this, {url:'libgen.is/search.php',keys:[{n:'req',i:'inputBox'}]});"
-							class="btn btn-primary btn-sm shadow-none"
-						>
-							LibGen
-						</button>
-						<button
-							onclick="submitForm(this, {url:'ebookee.com/search.php',keys:[{n:'q',i:'inputBox'}, {n:'sa',v:'search'}]});"
-							class="btn btn-primary btn-sm shadow-none"
-						>
-							Ebookee
-						</button>
-						<button
-							onclick="submitForm(this, {url:'archive.org/search.php',keys:[{n:'query',i:'inputBox'}, {n:'and[]',v:'mediatype:\x22collection\x22'},{n:'and[]',v:'mediatype:\x22texts\x22'}]});"
-							class="btn btn-primary btn-sm shadow-none"
-						>
-							Archive
-						</button>
-
-						<button
-							onclick="submitForm(this, {url:'odcrawler.xyz',keys:[{a:'search/',i:'inputBox'}]});"
-							class="btn btn-primary btn-sm shadow-none"
-						>
-							ODC
-						</button>
-
-						<div>
-							<p
-								style="
-									font-size: 12px;
-									color: rgb(117, 117, 117);
-									margin-top: 10px;
-									margin-bottom: 10px;
-								"
-							>
-								*Needs an Account
-							</p>
-
-							<button
-								onclick="submitForm(this, {url:'forum.mobilism.me/search.php',keys:[{n:'keywords',i:'inputBox'},{n:'terms',v:'all'},{n:'fid[]',v:'106'},{n:'sc',v:'1'},{n:'sf',v:'titleonly'},{n:'sk',v:'t'},{n:'sd',v:'d'},{n:'sr',v:'topics'},{n:'h',v:'300'},{n:'t',v:'0'}]});"
-								class="btn btn-primary btn-sm shadow-none"
-							>
-								Mob
-							</button>
-
-							<button
-								onclick="submitForm(this, {url:'overdrive.com/search/',keys:[{n:'q',i:'inputBox'},{n:'f-formatClassification',v:'eBook'},]});"
-								class="btn btn-primary btn-sm shadow-none"
-							>
-								ODrive
-							</button>
-							<button
-								onclick="submitForm(this, {url:'drunkenslug.com',keys:[{a:'search/',i:'inputBox'}, {n:'t',v:'7000'}]});"
-								class="btn btn-primary btn-sm shadow-none"
-							>
-								DSlug
-							</button>
-
-							<button
-								onclick="submitForm(this, {url:'nzbgeek.info/geekseek.php',keys:[{n:'browseincludewords',i:'inputBox'}, {n:'c',v:'7000'}]});"
-								class="btn btn-primary btn-sm shadow-none"
-							>
-								Geek
-							</button>
-							<button
-								onclick="submitForm(this, {url:'myanonamouse.net/tor/browse.php',keys:[{n:'tor[text]',i:'inputBox'}, {n:'tor[cat][]',v:'60'},{n:'tor[cat][]',v:'71'},{n:'tor[cat][]',v:'72'},{n:'tor[cat][]',v:'90'},{n:'tor[cat][]',v:'61'},{n:'tor[cat][]',v:'73'},{n:'tor[cat][]',v:'101'},{n:'tor[cat][]',v:'62'},{n:'tor[cat][]',v:'63'},{n:'tor[cat][]',v:'107'},{n:'tor[cat][]',v:'64'},{n:'tor[cat][]',v:'74'},{n:'tor[cat][]',v:'102'},{n:'tor[cat][]',v:'76'},{n:'tor[cat][]',v:'77'},{n:'tor[cat][]',v:'65'},{n:'tor[cat][]',v:'103'},{n:'tor[cat][]',v:'115'},{n:'tor[cat][]',v:'91'},{n:'tor[cat][]',v:'66'},{n:'tor[cat][]',v:'78'},{n:'tor[cat][]',v:'67'},{n:'tor[cat][]',v:'79'},{n:'tor[cat][]',v:'80'},{n:'tor[cat][]',v:'92'},{n:'tor[cat][]',v:'118'},{n:'tor[cat][]',v:'94'},{n:'tor[cat][]',v:'120'},{n:'tor[cat][]',v:'95'},{n:'tor[cat][]',v:'81'},{n:'tor[cat][]',v:'82'},{n:'tor[cat][]',v:'68'},{n:'tor[cat][]',v:'69'},{n:'tor[cat][]',v:'75'},{n:'tor[cat][]',v:'96'},{n:'tor[cat][]',v:'104'},{n:'tor[cat][]',v:'109'},{n:'tor[cat][]',v:'70'},{n:'tor[cat][]',v:'112'}]});"
-								class="btn btn-primary btn-sm shadow-none"
-							>
-								MaM
-							</button>
-						</div>
-
-						<p style="margin-top: 30px">
-							<button
-								onclick="submitAllButtons(this)"
-								class="btn btn-secondary btn-sm shadow-none"
-							>
-								Open ALL
-							</button>
-						</p>
-					</div>
-					<div><!-- RIGHT - Empty On Purpose--></div>
-				</div>
-			</form>
+				</form>
+			</div>
 		</div>
 		<div
-			class="wide"
+			class="footer"
 			style="text-align: center; font-size: 12px; color: rgb(117, 117, 117)"
 		>
 			BTC: bc1qcj07sfntwmn7f6n9t2snqduvej4nukxrgcypyg<br />
