@@ -60,13 +60,6 @@
 				display: grid;
 				height: 50vh;
 				grid-template-columns: 0.5fr 1fr 1fr 0.5fr;
-				grid-auto-rows: minmax(200px, auto);
-			}
-			.wide {
-				grid-column: 1/5;
-				grid-row: 2/2;
-				align-items: flex-end;
-				justify-content: flex-end;
 			}
 		</style>
 
@@ -337,19 +330,15 @@
 						</p>
 					</div>
 					<div><!-- RIGHT - Empty On Purpose--></div>
-					<div
-						class="wide"
-						style="
-							text-align: center;
-							font-size: 12px;
-							color: rgb(117, 117, 117);
-						"
-					>
-						BTC: bc1qcj07sfntwmn7f6n9t2snqduvej4nukxrgcypyg<br />
-						ETH: 0x0735BBDA5D4110F005A677984A145Cef3d2A00Cf
-					</div>
 				</div>
 			</form>
+		</div>
+		<div
+			class="wide"
+			style="text-align: center; font-size: 12px; color: rgb(117, 117, 117)"
+		>
+			BTC: bc1qcj07sfntwmn7f6n9t2snqduvej4nukxrgcypyg<br />
+			ETH: 0x0735BBDA5D4110F005A677984A145Cef3d2A00Cf
 		</div>
 	</body>
 </html>
